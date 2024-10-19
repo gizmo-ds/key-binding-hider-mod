@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "dev.aika.key_binding_hider.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "client": [
+    "client.KeyBindsListMixin"
+  ],
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

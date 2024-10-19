@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "key_binding_hider",
+  "version": "${version}",
+  "name": "KeyBinding Hider",
+  "description": "A simple mod for hiding specific key bindings in the GUI.",
+  "authors": [
+    {
+      "name": "Gizmo",
+      "contact": {
+        "homepage": "https://github.com/gizmo-ds"
+      }
+    }
+  ],
+  "contact": {
+    "homepage": "https://github.com/gizmo-ds/key-binding-hider-mod",
+    "sources": "https://github.com/gizmo-ds/key-binding-hider-mod",
+    "issues": "https://github.com/gizmo-ds/key-binding-hider-mod/issues"
+  },
+  "license": "MIT",
+  "environment": "CLIENT",
+  "icon": "assets/key_binding_hider/icon.png",
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.donate": "https://afdian.com/a/gizmo"
+      }
+    }
+  },
+  "entrypoints": {
+    "main": [
+      "dev.aika.key_binding_hider.fabric.KeyBindingHiderFabric"
+    ],
+    "client": [
+      "dev.aika.key_binding_hider.fabric.client.KeyBindingHiderFabricClient"
+    ]
+  },
+  "mixins": [
+    "key_binding_hider.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.7",
+    "minecraft": "~1.20.1",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
