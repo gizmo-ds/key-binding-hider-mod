@@ -35,6 +35,4 @@ jobs:
         with:
           files: |
             fabric/build/libs/*mc1.20.1.jar
-            fabric/build/libs/*mc1.20.1-sources.jar
             forge/build/libs/*mc1.20.1.jar
-            forge/build/libs/*mc1.20.1-sources.jar
