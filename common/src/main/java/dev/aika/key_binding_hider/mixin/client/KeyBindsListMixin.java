@@ -24,6 +24,8 @@ public abstract class KeyBindsListMixin extends ContainerObjectSelectionList<Key
 
     @Redirect(method = "<init>", at = @At(value = "FIELD", target = "Lnet/minecraft/client/Options;keyMappings:[Lnet/minecraft/client/KeyMapping;"))
     private KeyMapping[] hidingSpecificKeyBindings(final Options options) {
+        if (KeyBindingHider.CONFIG.KeyBindings == null || KeyBindingHider.CONFIG.KeyBindings.isEmpty())
+            return options.keyMappings;
         return ArrayUtils.removeElements(options.keyMappings, Arrays.stream(options.keyMappings).filter(k -> {
             for (String key : KeyBindingHider.CONFIG.KeyBindings) {
                 if (k.getName().startsWith(key)) return true;
