@@ -41,7 +41,7 @@ subprojects {
     }
 
     processResources {
-        from("../LICENSE") {
+        from(rootProject.file("LICENSE")) {
             rename { "META-INF/$rootProject.archives_name-LICENSE" }
         }
     }

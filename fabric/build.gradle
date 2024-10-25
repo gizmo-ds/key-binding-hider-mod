@@ -40,7 +40,7 @@ processResources {
     filesMatching('fabric.mod.json') {
         expand version: project.version
     }
-    from("../assets/icon.png") {
+    from(rootProject.file("assets/icon.png")) {
         rename { "assets/$rootProject.archives_name/icon.png" }
     }
 }
