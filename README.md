@@ -7,14 +7,15 @@ A simple mod for hiding specific key bindings in the GUI.
 
 ## How to use
 
-Edit the `config/key_binding_hider.json` file to hide the key bindings you want. The mod will hide all KeyBindings
+Edit the `config/key_binding_hider.toml` file to hide the key bindings you want. The mod will hide all KeyBindings
 starting with a value in `KeyBindings`
 
 ```toml
+SetKeyBindingToUnknown = true
 KeyBindings = ["key.jei"]
 ```
 
-For example, hide all JEI KeyBindings.
+For example, hide and disable all JEI KeyBindings.
 
 ## License
 
