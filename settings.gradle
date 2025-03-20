@@ -11,4 +11,4 @@ rootProject.name = 'key_binding_hider'
 
 include 'common'
 include 'fabric'
-include 'forge'
+include 'neoforge'
