@@ -1,9 +1,9 @@
-package dev.aika.key_binding_hider.forge;
+package dev.aika.key_binding_hider.neoforge;
 
 import com.mojang.blaze3d.platform.InputConstants;
-import net.minecraftforge.client.settings.KeyModifier;
-import net.minecraftforge.fml.loading.FMLPaths;
 import net.minecraft.client.KeyMapping;
+import net.neoforged.fml.loading.FMLPaths;
+import net.neoforged.neoforge.client.settings.KeyModifier;
 
 import java.nio.file.Path;
 

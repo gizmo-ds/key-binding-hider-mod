@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[47,)"
+loaderVersion = "[2,)"
 issueTrackerURL = "https://github.com/gizmo-ds/key-binding-hider-mod/issues"
 license = "MIT"
 
@@ -14,16 +14,18 @@ A simple mod for hiding specific key bindings in the GUI.
 logoFile = "key_binding_hider-icon.png"
 
 [[dependencies.key_binding_hider]]
-modId = "forge"
-mandatory = true
-versionRange = "[47,)"
+modId = "neoforge"
+type = "required"
+versionRange = "[21,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.key_binding_hider]]
 modId = "minecraft"
-mandatory = true
-versionRange = "[1.20.1,)"
+type = "required"
+versionRange = "[1.21.1,)"
 ordering = "NONE"
 side = "BOTH"
 
+[[mixins]]
+config = "key_binding_hider.mixins.json"
