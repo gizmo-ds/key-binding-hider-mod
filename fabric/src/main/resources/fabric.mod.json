@@ -5,21 +5,16 @@
   "name": "KeyBinding Hider",
   "description": "A simple mod for hiding specific key bindings in the GUI.",
   "authors": [
-    {
-      "name": "Gizmo",
-      "contact": {
-        "homepage": "https://github.com/gizmo-ds"
-      }
-    }
+    "Gizmo"
   ],
   "contact": {
     "homepage": "https://github.com/gizmo-ds/key-binding-hider-mod",
     "sources": "https://github.com/gizmo-ds/key-binding-hider-mod",
     "issues": "https://github.com/gizmo-ds/key-binding-hider-mod/issues"
   },
-  "license": "MIT",
-  "environment": "CLIENT",
-  "icon": "assets/key_binding_hider/icon.png",
+  "license": "${license}",
+  "environment": "client",
+  "icon": "key_binding_hider_logo.png",
   "custom": {
     "modmenu": {
       "links": {
@@ -39,8 +34,8 @@
     "key_binding_hider.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.16.7",
-    "minecraft": "~1.21.1",
+    "fabricloader": "*",
+    "minecraft": ">=1.21-",
     "java": ">=21"
   },
   "suggests": {

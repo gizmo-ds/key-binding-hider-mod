@@ -1,5 +1,11 @@
 # KeyBinding Hider
 
+[![AFDIAN](https://img.shields.io/badge/%E7%88%B1%E5%8F%91%E7%94%B5-Gizmo-%23946ce6)](https://afdian.com/a/gizmo)
+[![CurseForge Downloads](https://img.shields.io/curseforge/dt/1129419?logo=curseforge&label=CurseForge)](https://www.curseforge.com/minecraft/mc-mods/keybinding-hider)
+![MC-1.21](https://img.shields.io/badge/MC-1.21-blue)
+![MC-1.21.1](https://img.shields.io/badge/MC-1.21.1-blue)
+![GitHub License](https://img.shields.io/github/license/gizmo-ds/key-binding-hider-mod?label=License)
+
 A simple mod for hiding specific key bindings in the GUI.
 
 > [!WARNING]  
