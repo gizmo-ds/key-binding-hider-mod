@@ -2,13 +2,10 @@ package dev.aika.key_binding_hider.client.gui.components;
 
 import me.shedaniel.clothconfig2.api.AbstractConfigListEntry;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.network.chat.Component;
 
 import java.lang.reflect.Field;
 
-@Environment(EnvType.CLIENT)
 public class UnsupportedBuilder<T> extends AbstractComponentBuilder<T> {
     public UnsupportedBuilder(ConfigEntryBuilder entryBuilder, Object object, Field field) {
         super(entryBuilder, object, field);

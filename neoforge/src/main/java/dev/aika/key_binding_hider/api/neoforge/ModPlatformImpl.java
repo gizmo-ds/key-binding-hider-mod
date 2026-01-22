@@ -8,7 +8,7 @@ import java.nio.file.Path;
 @SuppressWarnings("unused")
 public class ModPlatformImpl {
     public static boolean isModLoaded(String modId) {
-        return FMLLoader.getLoadingModList().getModFileById(modId) != null;
+        return FMLLoader.getCurrent().getLoadingModList().getModFileById(modId) != null;
     }
 
     public static Path getConfigDirectory() {

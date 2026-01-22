@@ -20,7 +20,7 @@ dependencies {
     modImplementation(libs.fabric.loader)
 
     modLocalRuntime(libs.fabric.api)
-    modLocalRuntime(libs.fabric.jei)
+//    modLocalRuntime(libs.fabric.jei)
 
     modImplementation(libs.fabric.modmenu)
     modApi(libs.fabric.clothconfig) { exclude(group = "net.fabricmc.fabric-api") }

@@ -3,13 +3,10 @@ package dev.aika.key_binding_hider.client.gui.components;
 import me.shedaniel.clothconfig2.api.AbstractConfigListEntry;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import me.shedaniel.clothconfig2.impl.builders.BooleanToggleBuilder;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.network.chat.Component;
 
 import java.lang.reflect.Field;
 
-@Environment(EnvType.CLIENT)
 public final class SwitchBuilder extends AbstractComponentBuilder<Boolean> {
     public static final String DefaultCheckedText = "true";
     public static final String DefaultUncheckedText = "false";

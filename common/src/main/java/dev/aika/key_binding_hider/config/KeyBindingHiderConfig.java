@@ -4,7 +4,6 @@ import com.moandjiezana.toml.TomlWriter;
 import dev.aika.key_binding_hider.KeyBindingHider;
 import lombok.Getter;
 import lombok.SneakyThrows;
-import org.jetbrains.annotations.ApiStatus;
 import org.slf4j.Marker;
 import org.slf4j.MarkerFactory;
 
@@ -21,9 +20,7 @@ public final class KeyBindingHiderConfig extends ModConfig {
             """;
     private static final TomlWriter tomlWriter = new TomlWriter.Builder().build();
 
-    public boolean SetKeyBindingToUnknown = false;
-    @ApiStatus.Obsolete
-    public List<String> KeyBindings = new ArrayList<>();
+    public boolean HiddenKeyBindingsUseUnknown = false;
     public List<String> HiddenKeyPatterns = new ArrayList<>();
     public List<String> HiddenCategoryPatterns = new ArrayList<>();
 
@@ -50,7 +47,6 @@ public final class KeyBindingHiderConfig extends ModConfig {
     }
 
     private void pass() {
-        KeyBindings.removeIf(s -> s == null || s.trim().isEmpty());
         HiddenKeyPatterns.removeIf(s -> s == null || s.trim().isEmpty());
         HiddenCategoryPatterns.removeIf(s -> s == null || s.trim().isEmpty());
 

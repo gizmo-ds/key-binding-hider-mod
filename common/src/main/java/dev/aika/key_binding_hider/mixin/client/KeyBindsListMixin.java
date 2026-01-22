@@ -1,8 +1,6 @@
 package dev.aika.key_binding_hider.mixin.client;
 
 import dev.aika.key_binding_hider.KeyBindingHider;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Options;
@@ -15,7 +13,6 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 import java.util.Arrays;
 
-@Environment(EnvType.CLIENT)
 @Mixin(KeyBindsList.class)
 public abstract class KeyBindsListMixin extends ContainerObjectSelectionList<KeyBindsList.Entry> {
     public KeyBindsListMixin(Minecraft minecraft, int width, int height, int y, int itemHeight) {

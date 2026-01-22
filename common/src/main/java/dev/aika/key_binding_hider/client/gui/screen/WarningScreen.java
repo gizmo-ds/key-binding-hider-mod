@@ -1,10 +1,11 @@
 package dev.aika.key_binding_hider.client.gui.screen;
 
-import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.components.MultiLineLabel;
+import net.minecraft.client.gui.components.MultiLineTextWidget;
+import net.minecraft.client.gui.components.StringWidget;
+import net.minecraft.client.gui.layouts.FrameLayout;
+import net.minecraft.client.gui.layouts.LinearLayout;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
@@ -12,7 +13,7 @@ import net.minecraft.network.chat.Component;
 public abstract class WarningScreen extends Screen {
     protected final Screen parent;
     protected final Component message;
-    protected int messageHeight;
+    protected LinearLayout layout = LinearLayout.vertical().spacing(4);
 
     protected WarningScreen(Screen parent, Component title, Component message) {
         super(title);
@@ -25,24 +26,26 @@ public abstract class WarningScreen extends Screen {
     protected void init() {
         super.init();
 
-        this.messageHeight = this.font.wordWrapHeight(this.message, 300);
+        this.layout.defaultCellSetting().alignHorizontallyCenter();
+        this.layout.addChild(new StringWidget(this.title, this.font));
+        this.layout.addChild(new MultiLineTextWidget(this.message, this.font).setMaxWidth(this.width - 50).setMaxRows(15).setCentered(true));
+        LinearLayout linearLayout = this.layout.addChild(LinearLayout.horizontal().spacing(4));
+        linearLayout.defaultCellSetting().paddingTop(16);
 
-        this.addButtons(height / 2 + this.messageHeight / 2 + 15);
+        this.addButtons();
+        this.layout.visitWidgets(this::addRenderableWidget);
+        this.repositionElements();
     }
 
-    protected void addButtons(int y) {
-        this.addRenderableWidget(Button.builder(CommonComponents.GUI_PROCEED,
-                b -> Minecraft.getInstance().setScreen(this.parent)
-        ).bounds(this.width / 2 - 200 / 2, y, 200, 20).build());
+    protected void addButtons() {
+        this.layout.addChild(Button.builder(CommonComponents.GUI_PROCEED,
+                        b -> Minecraft.getInstance().setScreen(this.parent))
+                .build());
     }
 
     @Override
-    public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
-        super.render(guiGraphics, mouseX, mouseY, partialTick);
-        guiGraphics.drawCenteredString(this.font, this.title.copy().withStyle(ChatFormatting.BOLD),
-                this.width / 2, this.height / 2 - this.messageHeight / 2 - this.font.lineHeight - 15,
-                0xFFAA00);
-        MultiLineLabel.create(this.font, this.message, 300).renderCentered(guiGraphics,
-                this.width / 2, this.height / 2 - this.messageHeight / 2);
+    protected void repositionElements() {
+        this.layout.arrangeElements();
+        FrameLayout.centerInRectangle(this.layout, this.getRectangle());
     }
 }

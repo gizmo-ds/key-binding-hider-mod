@@ -8,8 +8,6 @@ import me.shedaniel.clothconfig2.api.AbstractConfigListEntry;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import me.shedaniel.clothconfig2.impl.builders.AbstractFieldBuilder;
 import me.shedaniel.clothconfig2.impl.builders.FieldBuilder;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.locale.Language;
 import net.minecraft.network.chat.Component;
 import org.slf4j.Logger;
@@ -20,7 +18,6 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
 @Accessors(chain = true)
-@Environment(EnvType.CLIENT)
 public abstract class AbstractComponentBuilder<T> {
     private static final Logger log = KeyBindingHider.LOGGER;
     private static final Marker marker = MarkerFactory.getMarker("AbstractComponentBuilder");
