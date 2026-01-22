@@ -24,13 +24,16 @@ dependencies {
     modApi(libs.neoforge.clothconfig)
 
     forgeRuntimeLibrary(libs.toml4j)
-    shadowBundle(libs.toml4j)
+    shadowBundle(libs.toml4j) { exclude(group = "com.google.code.gson", module = "gson") }
 }
 
 tasks {
     shadowJar {
         configurations = listOf(shadowBundle)
         archiveClassifier.set("dev-shadow")
+
+        exclude("META-INF/maven/**/*", "META-INF/versions/**/*")
+        relocate("com.moandjiezana.toml", "${mod.group}.libs.toml")
     }
 
     remapJar {

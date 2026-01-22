@@ -26,8 +26,8 @@
     "main": [
       "dev.aika.key_binding_hider.fabric.KeyBindingHiderFabric"
     ],
-    "client": [
-      "dev.aika.key_binding_hider.fabric.client.KeyBindingHiderFabricClient"
+    "modmenu": [
+      "dev.aika.key_binding_hider.fabric.compat.ModMenuCompat"
     ]
   },
   "mixins": [

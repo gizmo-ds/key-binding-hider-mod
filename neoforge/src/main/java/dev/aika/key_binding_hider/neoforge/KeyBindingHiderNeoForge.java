@@ -6,7 +6,6 @@ import net.neoforged.fml.common.Mod;
 @Mod(KeyBindingHider.MOD_ID)
 public final class KeyBindingHiderNeoForge {
     public KeyBindingHiderNeoForge() {
-        // Run our common setup.
         KeyBindingHider.init();
     }
 }

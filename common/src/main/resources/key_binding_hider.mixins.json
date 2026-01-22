@@ -4,7 +4,9 @@
   "compatibilityLevel": "JAVA_21",
   "minVersion": "0.8",
   "client": [
-    "client.KeyBindsListMixin"
+    "client.KeyBindsListMixin",
+    "client.KeyMappingMixin",
+    "client.ScreenMixin"
   ],
   "mixins": [
   ],

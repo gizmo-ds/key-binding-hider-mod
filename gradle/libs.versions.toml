@@ -6,7 +6,8 @@ shadow = { id = "com.github.johnrengelman.shadow", version = "8.1.1" }
 [versions]
 minecraft = "1.21.1"
 parchment = "2024.11.17"
-toml4j = "0.7.2"
+toml4j = "0.7.3"
+lombok = "1.18.38"
 # Dependencies
 neoforge = "21.1.218"
 fabric-loader = "0.18.4"
@@ -16,7 +17,8 @@ clothconfig = "15.0.130"
 jei = "19.25.1.334"
 
 [libraries]
-toml4j = { module = "com.moandjiezana.toml:toml4j", version.ref = "toml4j" }
+toml4j = { module = "io.hotmoka:toml4j", version.ref = "toml4j" }
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
 clothconfig-api = { module = "me.shedaniel.cloth:cloth-config", version.ref = "clothconfig" }
 ## NeoForge
 neoforge-neoforge = { module = "net.neoforged:neoforge", version.ref = "neoforge" }
