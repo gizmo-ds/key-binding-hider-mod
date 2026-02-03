@@ -30,7 +30,6 @@ public final class KeyBindingHider {
 
     public static void applyKeyBinding() {
         final KeyMapping[] keyMappings = Minecraft.getInstance().options.keyMappings;
-//        final List<String> categories = Arrays.stream(keyMappings).map(KeyMapping::getCategory).distinct().toList();
 
         final List<KeyMapping> _hiddenKeyMappings = new ArrayList<>();
 
@@ -57,7 +56,7 @@ public final class KeyBindingHider {
             });
         });
 
-        if (CONFIG.isSetKeyBindingToUnknown()) {
+        if (CONFIG.isHiddenKeyBindingsUseUnknown()) {
             _hiddenKeyMappings.forEach(KeyBindingHiderPlatform::setKeyBindingToUnknown);
         }
 

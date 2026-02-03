@@ -21,7 +21,7 @@ public final class KeyBindingHiderConfig extends ModConfig {
             """;
     private static final TomlWriter tomlWriter = new TomlWriter.Builder().build();
 
-    public boolean SetKeyBindingToUnknown = false;
+    public boolean HiddenKeyBindingsUseUnknown = false;
     @ApiStatus.Obsolete
     public List<String> KeyBindings = new ArrayList<>();
     public List<String> HiddenKeyPatterns = new ArrayList<>();

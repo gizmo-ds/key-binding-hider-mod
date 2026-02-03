@@ -3,7 +3,7 @@ package dev.aika.key_binding_hider.neoforge;
 import dev.aika.key_binding_hider.KeyBindingHider;
 import dev.aika.key_binding_hider.api.ModPlatform;
 import dev.aika.key_binding_hider.client.gui.screen.MissingClothConfigScreen;
-import dev.aika.key_binding_hider.compat.ClothConfigScreen;
+import dev.aika.key_binding_hider.compat.cloth.ClothConfigScreen;
 import net.minecraft.client.gui.screens.Screen;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;

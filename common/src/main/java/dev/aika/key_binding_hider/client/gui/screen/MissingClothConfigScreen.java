@@ -3,6 +3,7 @@ package dev.aika.key_binding_hider.client.gui.screen;
 import net.minecraft.Util;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.layouts.LinearLayout;
 import net.minecraft.client.gui.screens.ConfirmLinkScreen;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.CommonComponents;
@@ -21,27 +22,27 @@ public final class MissingClothConfigScreen extends WarningScreen {
     }
 
     @Override
-    protected void addButtons(int y) {
-        this.addRenderableWidget(Button.builder(
+    protected void addButtons() {
+        final LinearLayout buttonLayout = LinearLayout.horizontal().spacing(4);
+        buttonLayout.addChild(Button.builder(
                         Component.translatable("gui.key_binding_hider.missing_cloth_config.curseforge_download"),
                         openLink(CLOTH_CONFIG_CURSEFORGE))
-                .bounds(this.width / 2 - 148 - 2, y, 148, 20).build());
-        this.addRenderableWidget(Button.builder(
+                .width(148).build());
+        buttonLayout.addChild(Button.builder(
                         Component.translatable("gui.key_binding_hider.missing_cloth_config.modrinth_download"),
                         openLink(CLOTH_CONFIG_MODRINTH))
-                .bounds(this.width / 2 + 2, y, 148, 20).build());
-        this.addRenderableWidget(Button.builder(CommonComponents.GUI_BACK,
-                b -> Minecraft.getInstance().setScreen(this.parent)
-        ).bounds(this.width / 2 - 300 / 2, y + 24, 300, 20).build());
+                .width(148).build());
+        this.layout.addChild(buttonLayout);
+        this.layout.addChild(Button.builder(
+                        CommonComponents.GUI_BACK, b -> Minecraft.getInstance().setScreen(this.lastScreen))
+                .width(300).build());
     }
 
+    @SuppressWarnings("DataFlowIssue")
     private Button.OnPress openLink(String link) {
-        return b -> {
-            if (minecraft == null) return;
-            minecraft.setScreen(new ConfirmLinkScreen((v) -> {
-                if (v) Util.getPlatform().openUri(link);
-                minecraft.setScreen(this);
-            }, link, true));
-        };
+        return b -> minecraft.setScreen(new ConfirmLinkScreen((v) -> {
+            if (v) Util.getPlatform().openUri(link);
+            minecraft.setScreen(this);
+        }, link, true));
     }
 }

@@ -5,7 +5,7 @@ import com.terraformersmc.modmenu.api.ModMenuApi;
 import dev.aika.key_binding_hider.KeyBindingHider;
 import dev.aika.key_binding_hider.api.ModPlatform;
 import dev.aika.key_binding_hider.client.gui.screen.MissingClothConfigScreen;
-import dev.aika.key_binding_hider.compat.ClothConfigScreen;
+import dev.aika.key_binding_hider.compat.cloth.ClothConfigScreen;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 
