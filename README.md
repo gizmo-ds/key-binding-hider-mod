@@ -12,15 +12,28 @@ A simple mod for hiding specific key bindings in the GUI.
 
 ## How to use
 
-Edit the `config/key_binding_hider.toml` file to hide the key bindings you want. The mod will hide all KeyBindings
-starting with a value in `KeyBindings`
+Most users can configure hidden key bindings through the in-game configuration screens.  
+However, advanced users may also edit the configuration file manually to achieve more complex behavior.
 
-```toml
-SetKeyBindingToUnknown = true
-KeyBindings = ["key.jei"]
+The following example shows the contents of `config/key_binding_hider.json`.
+
+```json5
+{
+  "HiddenKeyBindingsUseUnknown": true, // Set hidden key bindings to Unknown to prevent key binding conflicts.
+  "HiddenKeyPatterns": [ // Key bindings with IDs matching any of these patterns will be hidden.
+    "key.hotbar.9" // Hide the hotbar 9 key binding
+  ],
+  "HiddenCategoryPatterns": [ // Key bindings whose category matches any of these patterns will be hidden.
+    "minecraft:multiplayer", // Hide the multiplayer category
+    "#jei:.*" // Hide all categories matching this regular expression
+  ]
+}
 ```
 
-For example, hide and disable all JEI KeyBindings.
+> By default, entries are treated as plain text.  
+> If an entry starts with `#`, the rest of the value is treated as a regular expression.
+>
+> For example, `#key\.jei\..*` hides all JEI key bindings, and `#jei:.*` hides all JEI-related categories.
 
 ## License
 
