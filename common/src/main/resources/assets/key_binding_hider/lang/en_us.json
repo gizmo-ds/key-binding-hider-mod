@@ -1,19 +1,12 @@
 {
   "modmenu.nameTranslation.key_binding_hider": "KeyBinding Hider",
   "modmenu.descriptionTranslation.key_binding_hider": "A simple mod for hiding specific key bindings in the GUI.",
-  "gui.key_binding_hider.missing_cloth_config.title": "Couldn't open in-game configuration",
-  "gui.key_binding_hider.missing_cloth_config.message": "You'll need to install the Cloth Config mod to use the in-game configuration feature.\nClick the button below to jump to the download page",
-  "gui.key_binding_hider.missing_cloth_config.modrinth_download": "Modrinth",
-  "gui.key_binding_hider.missing_cloth_config.curseforge_download": "CurseForge",
   "config.key_binding_hider.@title": "KeyBinding Hider",
-  "config.key_binding_hider.unsupported.description": "§6§lUnsupported field type: %s",
-  "config.key_binding_hider.@switch.true": "§aEnable",
-  "config.key_binding_hider.@switch.false": "§cDisabled",
-  "config.key_binding_hider.@footer": "Entries starting with §6#§r are treated as RegExp.\nExample: §a#key\\.jei\\..*§r hides all JEI key bindings.",
+  "config.key_binding_hider.@switch.show": "Show",
+  "config.key_binding_hider.@switch.hide": "§cHide",
+  "config.key_binding_hider.@apply": "Save & Quit",
+  "config.key_binding_hider.key_binding.@tooltip": "KeyBinding: %s",
+  "config.key_binding_hider.category.@tooltip": "Category: %s",
   "config.key_binding_hider.general.HiddenKeyBindingsUseUnknown": "HiddenKeyBindingsUseUnknown",
-  "config.key_binding_hider.general.HiddenKeyBindingsUseUnknown.@tooltip": "Set hidden key bindings to Unknown to prevent key binding conflicts.",
-  "config.key_binding_hider.general.HiddenKeyPatterns": "HiddenKeyPatterns",
-  "config.key_binding_hider.general.HiddenKeyPatterns.@tooltip": "Key bindings with IDs matching any of these patterns will be hidden.",
-  "config.key_binding_hider.general.HiddenCategoryPatterns": "HiddenCategoryPatterns",
-  "config.key_binding_hider.general.HiddenCategoryPatterns.@tooltip": "Key bindings whose category matches any of these patterns will be hidden."
+  "config.key_binding_hider.general.HiddenKeyBindingsUseUnknown.@tooltip": "Set hidden key bindings to Unknown to prevent key binding conflicts."
 }

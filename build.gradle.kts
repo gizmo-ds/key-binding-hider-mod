@@ -44,7 +44,6 @@ subprojects {
             }
         })
 
-        implementation(libs.toml4j)
         compileOnly(rootProject.libs.lombok)
         annotationProcessor(rootProject.libs.lombok)
     }

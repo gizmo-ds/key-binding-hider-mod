@@ -1,9 +1,7 @@
 package dev.aika.key_binding_hider.neoforge;
 
 import dev.aika.key_binding_hider.KeyBindingHider;
-import dev.aika.key_binding_hider.api.ModPlatform;
-import dev.aika.key_binding_hider.client.gui.screen.MissingClothConfigScreen;
-import dev.aika.key_binding_hider.compat.ClothConfigScreen;
+import dev.aika.key_binding_hider.client.gui.screen.KeyBindingHiderConfigScreen;
 import net.minecraft.client.gui.screens.Screen;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -15,13 +13,7 @@ import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 public class KeyBindingHiderClientNeoForge {
     public KeyBindingHiderClientNeoForge(IEventBus ignoredEventBus, ModContainer container) {
         container.registerExtensionPoint(IConfigScreenFactory.class,
-                (ModContainer ignoredModContainer, Screen parent) ->
-                        ModPlatform.isModLoaded("cloth_config") ?
-                                ClothConfigScreen.builder()
-                                        .setParent(parent)
-                                        .setConfig(KeyBindingHider.CONFIG)
-                                        .build()
-                                : new MissingClothConfigScreen(parent)
+                (ModContainer ignoredModContainer, Screen parent) -> new KeyBindingHiderConfigScreen(parent)
         );
     }
 }

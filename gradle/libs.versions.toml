@@ -6,27 +6,21 @@ shadow = { id = "com.github.johnrengelman.shadow", version = "8.1.1" }
 [versions]
 minecraft = "1.21.11"
 parchment = "2025.12.20"
-toml4j = "0.7.3"
 lombok = "1.18.38"
 # Dependencies
 neoforge = "21.11.27-beta"
 fabric-loader = "0.18.4"
 fabric-api = "0.141.1+1.21.11"
 modmenu = "17.0.0-beta.2"
-clothconfig = "21.11.153"
 jei = "27.4.0.15"
 
 [libraries]
-toml4j = { module = "io.hotmoka:toml4j", version.ref = "toml4j" }
 lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
-clothconfig-api = { module = "me.shedaniel.cloth:cloth-config", version.ref = "clothconfig" }
 ## NeoForge
 neoforge-neoforge = { module = "net.neoforged:neoforge", version.ref = "neoforge" }
 neoforge-jei = { module = "mezz.jei:jei-1.21.11-neoforge", version.ref = "jei" }
-neoforge-clothconfig = { module = "me.shedaniel.cloth:cloth-config-neoforge", version.ref = "clothconfig" }
 ## Fabric
 fabric-loader = { module = "net.fabricmc:fabric-loader", version.ref = "fabric-loader" }
 fabric-api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric-api" }
 fabric-modmenu = { module = "com.terraformersmc:modmenu", version.ref = "modmenu" }
 fabric-jei = { module = "mezz.jei:jei-1.21.11-fabric", version.ref = "jei" }
-fabric-clothconfig = { module = "me.shedaniel.cloth:cloth-config-fabric", version.ref = "clothconfig" }
