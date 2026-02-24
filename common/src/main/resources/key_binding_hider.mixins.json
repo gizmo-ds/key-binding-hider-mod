@@ -6,7 +6,7 @@
   "client": [
     "client.KeyBindsListMixin",
     "client.KeyMappingMixin",
-    "client.ScreenMixin"
+    "client.TitleScreenMixin"
   ],
   "mixins": [
   ],

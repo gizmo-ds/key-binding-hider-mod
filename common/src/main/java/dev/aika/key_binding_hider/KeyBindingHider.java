@@ -22,10 +22,6 @@ public final class KeyBindingHider {
 
     public static void init() {
         CONFIG = KeyBindingHiderConfig.load();
-
-        if (!CONFIG.getKeyBindings().isEmpty()) {
-            LOGGER.warn("KeyBindings config is deprecated and will be removed in a future version.");
-        }
     }
 
     public static void applyKeyBinding() {
@@ -33,7 +29,6 @@ public final class KeyBindingHider {
 
         final List<KeyMapping> _hiddenKeyMappings = new ArrayList<>();
 
-        final var oldConfigMatches = CONFIG.getKeyBindings();
         final var hiddenKeyPatterns = CONFIG.getHiddenKeyPatterns();
         final var hiddenKeyRegexPatterns = CONFIG.getHiddenKeyPatterns().stream().filter(c -> c.startsWith("#"))
                 .map(c -> c.substring(1)).toList();
@@ -45,9 +40,6 @@ public final class KeyBindingHider {
             if (hiddenKeyPatterns.contains(k.getName())) _hiddenKeyMappings.add(k);
             hiddenKeyRegexPatterns.forEach(r -> {
                 if (Pattern.matches(r, k.getName())) _hiddenKeyMappings.add(k);
-            });
-            oldConfigMatches.forEach(m -> {
-                if (k.getName().startsWith(m)) _hiddenKeyMappings.add(k);
             });
 
             if (hiddenCategoryPatterns.contains(k.getCategory())) _hiddenKeyMappings.add(k);

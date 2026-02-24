@@ -7,11 +7,6 @@ import java.nio.file.Path;
 @SuppressWarnings("unused")
 public class ModPlatform {
     @ExpectPlatform
-    public static boolean isModLoaded(String modId) {
-        throw new AssertionError();
-    }
-
-    @ExpectPlatform
     public static Path getConfigDirectory() {
         throw new AssertionError();
     }
